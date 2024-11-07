@@ -44,7 +44,6 @@ table tr td:last-child {
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 1em;
     transition: background-color 0.3s ease;
 }
 

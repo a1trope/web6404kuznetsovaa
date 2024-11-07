@@ -1,0 +1,43 @@
+/* Основные стили */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Главный заголовок на главной странице */
+h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Стили списка игр */
+.game-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.game-list li {
+    margin: 10px 0;
+}
+
+.game-list li a {
+    text-decoration: none;
+    color: #1a73e8;
+    font-size: 1.2em;
+    transition: 0.3s ease;
+}
+
+.game-list li a:hover {
+    color: #cc003d;
+}

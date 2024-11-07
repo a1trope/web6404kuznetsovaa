@@ -1,4 +1,3 @@
-/* Основные стили */
 body {
     font-family: Arial, sans-serif;
     color: #333;
@@ -11,7 +10,6 @@ body {
     min-height: 100vh;
 }
 
-/* Главный заголовок на главной странице */
 h1 {
     color: #333;
     font-size: 2.5em;
@@ -19,7 +17,6 @@ h1 {
     text-align: center;
 }
 
-/* Стили списка игр */
 .game-list {
     list-style-type: none;
     padding: 0;

@@ -7,25 +7,51 @@ function isInteger(n) {}
 /**
  * Напишите функцию, которая возвращает массив четных чисел от 2 до 20 включительно
  */
-function even() {}
+function even() {
+    let arr = []
+    for (let i = 2; i <= 20; i++) {
+        if (i % 2 === 0)
+            arr.push(i)
+    }
+    return arr
+}
 
 /**
  * Напишите функцию, считающую сумму чисел до заданного используя цикл
  * @param {*} n
  */
-function sumTo(n) {}
+function sumTo(n) {
+    let numbersSum = 0;
+    for (let i = 1; i <= n; ++i) {
+        numbersSum += i;
+    }
+    return numbersSum;
+}
 
 /**
  * Напишите функцию, считающую сумму чисел до заданного используя рекурсию
  * @param {*} n
  */
-function recSumTo(n) {}
+function recSumTo(n) {
+    if (n < 0)
+        return 0;
+    if (n === 1) {
+        return 1;
+    }
+    return n + recSumTo(n-1)
+}
 
 /**
  * Напишите функцию, считающую факториал заданного числа
  * @param {*} n
  */
-function factorial(n) {}
+function factorial(n) {
+    let result = 1;
+    for (let i = 2; i <= n; ++i) {
+        result *= i
+    }
+    return result
+}
 
 /**
  * Напишите функцию, которая определяет, является ли число двойкой, возведенной в степень
@@ -37,7 +63,18 @@ function isBinary(n) {}
  * Напишите функцию, которая находит N-е число Фибоначчи
  * @param {*} n
  */
-function fibonacci(n) {}
+function fibonacci(n) {
+    let a = 1
+    let b = 1
+
+    for (let i = 0; i < n - 2; ++i) {
+        let tmp = a + b;
+        a = b
+        b = tmp
+    }
+
+    return b
+}
 
 /** Напишите функцию, которая принимает начальное значение и функцию операции
  * и возвращает функцию - выполняющую эту операцию.

@@ -109,7 +109,15 @@ function getOperationFn(initialValue, operatorFn) {}
  * console.log(generator()); // 7
  * console.log(generator()); // 9
  */
-function sequence(start, step) {}
+function sequence(start = 0, step = 1) {
+    let cursor = start;
+  
+    return () => {
+        const result = cursor;
+        cursor += step;
+        return result;
+    };
+}
 
 /**
  * Напишите функцию deepEqual, которая принимает два значения
@@ -125,7 +133,34 @@ function sequence(start, step) {}
  * deepEqual({arr: [22, 33], text: 'text'}, {arr: [22, 33], text: 'text'}) // true
  * deepEqual({arr: [22, 33], text: 'text'}, {arr: [22, 3], text: 'text2'}) // false
  */
-function deepEqual(firstObject, secondObject) {}
+function deepEqual(firstObject, secondObject) {
+    // Проверка на строгое равенство (для примитивов и одинаковых ссылок)
+    if (firstObject === secondObject)
+        return true
+  
+    if (
+        firstObject === null ||
+        secondObject === null ||
+        typeof firstObject !== 'object' ||
+        typeof secondObject !== 'object'
+    ) {
+        return false
+    }
+  
+    const firstObjectKeys = Object.keys(firstObject);
+    const secondObjectKeys = Object.keys(secondObject);
+  
+    if (firstObjectKeys.length !== secondObjectKeys.length)
+        return false
+  
+    for (let key of firstObjectKeys) {
+        if (!(secondObjectKeys.includes(key) && deepEqual(firstObject[key], secondObject[key]))) {
+            return false
+        }
+    }
+  
+    return true;
+}
 
 module.exports = {
     isInteger,

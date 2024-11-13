@@ -17,5 +17,8 @@
     "lint-staged": {
         "**/*": "prettier --write ."
     },
-    "license": "MIT"
+    "license": "MIT",
+    "dependencies": {
+        "package.json": "^2.0.1"
+    }
 }

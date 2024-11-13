@@ -92,11 +92,10 @@ function fibonacci(n) {
  * console.log(sumFn(3)) - 18
  */
 function getOperationFn(initialValue, operatorFn) {
-    if (operatorFn === undefined)
-        return initialValue
-
-    
     return (newValue) => {
+        if (operatorFn === undefined)
+            return initialValue
+
         const result = operatorFn(initialValue, newValue)
         initialValue = result
         return result
@@ -144,9 +143,16 @@ function sequence(start = 0, step = 1) {
  * deepEqual({arr: [22, 33], text: 'text'}, {arr: [22, 3], text: 'text2'}) // false
  */
 function deepEqual(firstObject, secondObject) {
-    // Проверка на строгое равенство (для примитивов и одинаковых ссылок)
     if (firstObject === secondObject)
-        return true
+        return true;
+  
+    if (
+        typeof firstObject === 'number' &&
+        typeof secondObject === 'number' &&
+        isNaN(firstObject) && isNaN(secondObject)
+    ) {
+        return true;
+    }
   
     if (
         firstObject === null ||
@@ -154,18 +160,17 @@ function deepEqual(firstObject, secondObject) {
         typeof firstObject !== 'object' ||
         typeof secondObject !== 'object'
     ) {
-        return false
+        return false;
     }
   
     const firstObjectKeys = Object.keys(firstObject);
     const secondObjectKeys = Object.keys(secondObject);
   
-    if (firstObjectKeys.length !== secondObjectKeys.length)
-        return false
+    if (firstObjectKeys.length !== secondObjectKeys.length) return false;
   
     for (let key of firstObjectKeys) {
         if (!(secondObjectKeys.includes(key) && deepEqual(firstObject[key], secondObject[key]))) {
-            return false
+            return false;
         }
     }
   

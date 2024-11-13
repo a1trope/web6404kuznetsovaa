@@ -146,13 +146,8 @@ function deepEqual(firstObject, secondObject) {
     if (firstObject === secondObject)
         return true;
   
-    if (
-        typeof firstObject === 'number' &&
-        typeof secondObject === 'number' &&
-        isNaN(firstObject) && isNaN(secondObject)
-    ) {
+    if (Number.isNaN(firstObject) && Number.isNaN(secondObject))
         return true;
-    }
   
     if (
         firstObject === null ||

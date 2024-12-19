@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма с валидацией</title>
+    <link rel="stylesheet" href="css/login_page.css">
+</head>
+<body>
+    <form id="user-form" action="/submit" method="POST">
+        <label for="username">Имя пользователя</label>
+        <input type="text" id="username" name="username" placeholder="Введите имя" required>
+        <div class="error-message" id="username-error">Имя должно быть не менее 3 символов</div>
+
+        <label for="email">Электронная почта</label>
+        <input type="email" id="email" name="email" placeholder="Введите email" required>
+        <div class="error-message" id="email-error">Введите корректный email</div>
+
+        <button type="submit">Войти</button>
+        
+        <a href="index.html" class="back-link">Вернуться на главную страницу</a>
+    </form>
+
+
+    <script src="scrtipts/login_script.js"></script>
+</body>
+</html>

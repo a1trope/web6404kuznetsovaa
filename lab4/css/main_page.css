@@ -38,7 +38,7 @@ header .btn:hover {
     color: white;
 }
 
-.game-grid {
+#game-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, 300px);
     justify-content: center;

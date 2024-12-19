@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const usernameError = document.getElementById('username-error');
     const emailError = document.getElementById('email-error');
 
-    // Функция проверки имени
     const validateUsername = () => {
         if (usernameInput.value.trim().length < 3) {
             usernameInput.classList.add('invalid');
@@ -18,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Функция проверки email
     const validateEmail = () => {
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailPattern.test(emailInput.value.trim())) {
@@ -32,17 +30,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Проверка при вводе
     usernameInput.addEventListener('input', validateUsername);
     emailInput.addEventListener('input', validateEmail);
 
-    // Проверка при отправке формы
     form.addEventListener('submit', (event) => {
         const isUsernameValid = validateUsername();
         const isEmailValid = validateEmail();
 
         if (!isUsernameValid || !isEmailValid) {
-            event.preventDefault(); // Блокируем отправку формы, если есть ошибки
+            event.preventDefault();
         }
     });
 });

@@ -1,0 +1,42 @@
+{
+  "/games" : {
+    "get": [
+      {
+        "id": 1,
+        "title": "Dishonored 2",
+        "image": "images/dishonored.jpg",
+        "link": "games/dishonored.html"
+      },
+      {
+        "id": 2,
+        "title": "Deus Ex: Human Revolution",
+        "image": "images/deus_ex.jpg",
+        "link": "games/deus_ex.html"
+      },
+      {
+        "id": 3,
+        "title": "Fallout: New Vegas",
+        "image": "images/fallout_nw.jpg",
+        "link": "games/fallout_nv.html"
+      },
+      {
+        "id": 4,
+        "title": "Hitman: Blood Money",
+        "image": "images/hitman.jpg",
+        "link": "games/hitman.html"
+      },
+      {
+        "id": 5,
+        "title": "Mafia II",
+        "image": "images/mafia_2.jpg",
+        "link": "games/mafia.html"
+      },
+      {
+        "id": 6,
+        "title": "The Elder Scrolls V: Skyrim",
+        "image": "images/tes_skyrim.jpg",
+        "link": "games/tes_skyrim.html"
+      }
+    ]
+  }
+}
